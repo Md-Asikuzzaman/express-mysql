@@ -1,11 +1,14 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 
 import students from "./routes/students.js";
 import db from "./database/db.js";
 
+dotenv.config();
+
 const app = express();
-const port = 1111;
+const port = process.env.PORT || 8000;
 
 // Middleware
 app.use(express.json());
